@@ -56,7 +56,7 @@ export default function App() {
       </main>
       <footer>
         <span className="copy">© 2025 Hubble — All rights reserved</span>
-        <span className="made-with">// try: ↑↑↓↓←→←→BA</span>
+        <span className="made-with">#resilience</span>
       </footer>
     </>
   );

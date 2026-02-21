@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section id="hero">
       <div className="hero-kanji" aria-hidden="true">
-        死<br />生<br />コ
+        忍
       </div>
       <div className="hero-inner">
         <div className="hero-eyebrow">
