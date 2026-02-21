@@ -8,7 +8,7 @@ export default function Hero() {
       </div>
       <div className="hero-inner">
         <div className="hero-eyebrow">
-          {meta.role} — Based in {meta.location}
+          {meta.role} — {meta.location} - Open to relocation.
         </div>
         <h1 className="hero-name">
           <span className="outline">FULL</span>

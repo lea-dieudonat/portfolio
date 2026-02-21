@@ -1,7 +1,7 @@
 export const meta = {
   name: "MONSTER",
   role: "Full-Stack Developer",
-  location: "France",
+  location: "Antibes, France",
   email: "leadieudonat@gmail.com",
   github: "https://github.com/lea-dieudonat",
   linkedin: "https://linkedin.com/in/leadieudonat",
@@ -34,8 +34,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "TypeScript", icon: "SiTypescript" },
       { name: "Vue 3 / Nuxt", icon: "SiNuxt" },
       { name: "Tailwind CSS", icon: "SiTailwindcss" },
-      { name: "Bootstrap", icon: "SiBootstrap" },
-      { name: "SCSS", icon: "SiSass" },
+      { name: "Chart.js", icon: "SiChartdotjs" },
     ],
   },
   {
