@@ -33,6 +33,47 @@ body {
   cursor: none;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .fade,
+  .fade.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  body {
+    cursor: auto;
+  }
+
+  #cursor,
+  #cursor-dot {
+    display: none;
+  }
+}
+
+@media (hover: none),
+(pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+
+  #cursor,
+  #cursor-dot {
+    display: none;
+  }
+}
+
 /* ---- CURSOR ---- */
 #cursor {
   position: fixed;
@@ -424,13 +465,6 @@ section {
 /* ---- ABOUT ---- */
 #about {
   padding: 120px var(--layout-gutter);
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
 }
 
 .avatar-frame {
@@ -1104,31 +1138,45 @@ footer .made-with {
   }
 
   .section-title {
+    font-size: clamp(36px, 12vw, 56px);
     margin-bottom: 40px;
+    white-space: nowrap;
+  }
+
+  .section-title br {
+    display: none;
+  }
+
+  .section-title span::before {
+    content: ' ';
   }
 
   #about,
   #skills,
   #projects,
   #experience {
-    padding-top: 88px;
-    padding-bottom: 88px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   #education {
-    padding-top: 64px;
-    padding-bottom: 88px;
+    padding-top: 56px;
+    padding-bottom: 80px;
   }
 
   #contact {
-    padding-top: 88px;
-    padding-bottom: 56px;
+    padding-top: 80px;
+    padding-bottom: 48px;
   }
 
   nav {
     position: fixed;
     padding-top: 16px;
     padding-bottom: 16px;
+  }
+
+  body.nav-open {
+    overflow: hidden;
   }
 
   .nav-links {
@@ -1180,19 +1228,10 @@ footer .made-with {
     transform: translateY(-5px) rotate(-45deg);
   }
 
-  .about-grid,
   .projects-grid,
   .contact-inner,
   .edu-grid {
     grid-template-columns: 1fr;
-  }
-
-  .about-skills {
-    grid-template-columns: 1fr;
-  }
-
-  .about-skills .skill-group.wide {
-    grid-column: auto;
   }
 
   .timeline-item {
@@ -1354,5 +1393,17 @@ footer .made-with {
 
   .about-skills .skill-group.wide {
     grid-column: auto;
+  }
+}
+
+@media (hover: none),
+(pointer: coarse) {
+  .skill-group {
+    border-color: var(--violet-light);
+  }
+
+  .skill-icon {
+    opacity: 1;
+    color: rgba(57, 255, 20, 0.78);
   }
 }

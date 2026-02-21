@@ -11,6 +11,7 @@ export default function Nav() {
   const [logoClicks, setLogoClicks] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
+  const menuId = "primary-navigation";
 
   useEffect(() => {
     if (!isMenuOpen) {
@@ -35,6 +36,30 @@ export default function Nav() {
     };
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    if (!isMenuOpen) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    document.body.classList.toggle("nav-open", isMenuOpen);
+    return () => {
+      document.body.classList.remove("nav-open");
+    };
+  }, [isMenuOpen]);
+
   const handleLogoClick = (e: React.MouseEvent) => {
     e.preventDefault();
     const next = logoClicks + 1;
@@ -55,13 +80,14 @@ export default function Nav() {
         className={`nav-burger ${isMenuOpen ? "open" : ""}`}
         aria-label="Toggle navigation menu"
         aria-expanded={isMenuOpen}
+        aria-controls={menuId}
         onClick={() => setIsMenuOpen((open) => !open)}
       >
         <span />
         <span />
         <span />
       </button>
-      <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
+      <ul id={menuId} className={`nav-links ${isMenuOpen ? "open" : ""}`}>
         {links.map((l) => (
           <li key={l.label}>
             <a href={l.href} onClick={() => setIsMenuOpen(false)}>

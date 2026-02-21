@@ -111,8 +111,8 @@ export const experiences = [
     role: "Full-Stack Developer",
     stack: "Symfony · PHP · React.js · PHPUnit · Cypress",
     points: [
-      "<strong>Lead d'une squad de 6 devs</strong> au sein d'une équipe produit de 15, sur une plateforme SaaS B2B pour l'industrie du coworking servant des milliers de clients.",
-      "<strong>Instauré les process qualité de zéro</strong> : tests automatisés Cypress E2E + PHPUnit backend, principes SOLID/DRY, code reviews systématiques.",
+      "<strong>Développeur full-stack dans une squad de 6 devs</strong> au sein d'une équipe produit de 15, sur une plateforme SaaS B2B pour l'industrie du coworking.",
+      "<strong>Instauré les process qualité de zéro</strong> : tests automatisés PHPUnit backend + Cypress E2E, principes SOLID/DRY, code reviews systématiques.",
       "Créé toute la documentation technique pour rationaliser l'onboarding et la maintenance.",
       "Facilité les cérémonies Scrum et contribution à la migration d'une architecture monolithique vers une API REST moderne.",
     ],
@@ -124,7 +124,7 @@ export const experiences = [
     stack: "Symfony · PHP · Python · JavaScript · MySQL",
     points: [
       "<strong>Construit de zéro</strong> un dashboard SaaS B2B pour la gestion et le monitoring de dispositifs de physiothérapie déployés en cabinets médicaux.",
-      "Seule développeuse web dans une équipe R&D de 5 : définition des user stories, spécifications techniques, décisions produit.",
+      "Equipe R&D de 5 : définition des user stories, spécifications techniques, décisions produit.",
       "<strong>Architecturé des connexions socket temps réel</strong> pour le monitoring sur des réseaux instables ou internationaux (Corée du Sud, USA).",
       "Stabilisation du serveur socket de crashs aléatoires à <strong>99.999% de disponibilité</strong> — debugging de fuites mémoire, race conditions, monitoring.",
       "Conformité <strong>IEC 62304</strong> (logiciel médical) et RGPD tout au long de l'évolution de la plateforme.",
