@@ -55,7 +55,7 @@ export default function App() {
         <Contact />
       </main>
       <footer>
-        <span className="copy">© 2025 Hubble — All rights reserved</span>
+        <span className="copy">© 2025 Léa Dieudonat — All rights reserved</span>
         <span className="made-with">#resilience</span>
       </footer>
     </>

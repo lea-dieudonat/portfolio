@@ -73,7 +73,7 @@ export default function Nav() {
   return (
     <nav ref={navRef}>
       <a href="#hero" className="nav-logo" onClick={handleLogoClick}>
-        HU<em>BB</em>LE
+        <em>L</em>EA <em>D</em>DN
       </a>
       <button
         type="button"
