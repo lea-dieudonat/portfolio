@@ -13,15 +13,14 @@ export default function Hero() {
         <h1 className="hero-name">
           <span className="outline">FULL</span>
           <span className="solid">STACK</span>
-          <span className="accent glitch" data-t={meta.name}>
-            {meta.name}
+          <span className="accent glitch" data-t="MONSTER">
+            MONSTER
           </span>
         </h1>
         <p className="hero-sub">
-          <strong>3+ ans</strong> à builder des plateformes SaaS B2B critiques.
-          <br />
-          Du backend PHP au frontend React — architecture propre, tests, zéro
-          compromis.
+          Fuelled by <strong>coffee & Monster</strong>. Allergic to pollen &
+          spaghetti code.
+          <br />I build things that don't crash at 3am. Usually.
         </p>
         <div className="hero-cta">
           <a href="#projects" className="btn btn-green">

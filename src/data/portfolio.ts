@@ -1,5 +1,5 @@
 export const meta = {
-  name: "Hubble",
+  name: "MONSTER",
   role: "Full-Stack Developer",
   location: "France",
   email: "leadieudonat@gmail.com",
@@ -10,44 +10,55 @@ export const meta = {
 
 export const about = {
   bio: [
-    "3+ ans à construire des plateformes <strong>B2B SaaS critiques</strong> — de la gestion de dispositifs médicaux en temps réel à des dashboards e-commerce avec intégration de paiement.",
-    "Lead technique d'une squad de 6 devs, j'ai instauré des process de qualité <strong>de zéro</strong> : tests E2E Cypress, PHPUnit, revues de code systématiques, documentation complète.",
-    "Fan de <strong>Clean Architecture</strong>, SOLID/DRY, et de code qui ne hurle pas à 3h du matin. J'ai maintenu des serveurs à <strong>99.999% de disponibilité</strong>.",
+    "J'ai fait mes armes en Backend — PHP, Symfony, Python. En train de conquérir le front - React, Vue, TypeScript.",
+    "J'ai des problèmes pour toutes vos solutions, et j'utilise ma flemme pour écrire du code simple.",
+    "Sur les pistes ou derrière une pinte quand je ne debug pas.",
   ],
   languages: [
     { flag: "🇫🇷", label: "Français", level: "Natif" },
     { flag: "🇬🇧", label: "English", level: "C1" },
     { flag: "🇩🇪", label: "Deutsch", level: "B1" },
   ],
-  skills_bars: [
-    { label: "Backend PHP/Symfony", pct: 90 },
-    { label: "React / TypeScript", pct: 82 },
-    { label: "Vue 3 / Nuxt 3", pct: 68 },
-    { label: "DevOps / Docker", pct: 76 },
-  ],
 };
 
-export type SkillDot = "green" | "violet" | "cyan";
+export type SkillCategory = {
+  title: string;
+  skills: { name: string; icon: string }[];
+};
 
-export const skills: { cat: string; name: string; dot: SkillDot }[] = [
-  { cat: "Frontend", name: "React 18", dot: "green" },
-  { cat: "Frontend", name: "TypeScript", dot: "green" },
-  { cat: "Frontend", name: "Vue 3 / Nuxt", dot: "cyan" },
-  { cat: "Frontend", name: "Tailwind CSS", dot: "cyan" },
-  { cat: "Backend", name: "Symfony 7", dot: "violet" },
-  { cat: "Backend", name: "PHP 8.2", dot: "violet" },
-  { cat: "Backend", name: "Node.js / Express", dot: "violet" },
-  { cat: "Backend", name: "Python", dot: "violet" },
-  { cat: "API & Archi", name: "API Platform", dot: "cyan" },
-  { cat: "API & Archi", name: "REST / JWT", dot: "cyan" },
-  { cat: "Base de données", name: "MySQL / PostgreSQL", dot: "green" },
-  { cat: "Base de données", name: "Doctrine / Prisma", dot: "green" },
-  { cat: "DevOps", name: "Docker", dot: "cyan" },
-  { cat: "DevOps", name: "CI/CD", dot: "cyan" },
-  { cat: "Tests", name: "PHPUnit", dot: "violet" },
-  { cat: "Tests", name: "Cypress E2E", dot: "violet" },
-  { cat: "Méthodo", name: "Scrum / Agile", dot: "green" },
-  { cat: "Paiement", name: "Stripe", dot: "green" },
+export const skillCategories: SkillCategory[] = [
+  {
+    title: "Frontend",
+    skills: [
+      { name: "React 18", icon: "SiReact" },
+      { name: "TypeScript", icon: "SiTypescript" },
+      { name: "Vue 3 / Nuxt", icon: "SiNuxt" },
+      { name: "Tailwind CSS", icon: "SiTailwindcss" },
+      { name: "Bootstrap", icon: "SiBootstrap" },
+      { name: "SCSS", icon: "SiSass" },
+    ],
+  },
+  {
+    title: "Backend",
+    skills: [
+      { name: "PHP 8.2", icon: "SiPhp" },
+      { name: "Symfony 7", icon: "SiSymfony" },
+      { name: "Node.js", icon: "SiNodedotjs" },
+      { name: "Python", icon: "SiPython" },
+      { name: "API Platform", icon: "SiApachekafka" },
+      { name: "PHPUnit", icon: "SiPhp" },
+    ],
+  },
+  {
+    title: "Database & Tools",
+    skills: [
+      { name: "MySQL", icon: "SiMysql" },
+      { name: "PostgreSQL", icon: "SiPostgresql" },
+      { name: "Docker", icon: "SiDocker" },
+      { name: "Git", icon: "SiGit" },
+      { name: "Postman", icon: "SiPostman" },
+    ],
+  },
 ];
 
 export const projects = [
@@ -119,9 +130,4 @@ export const experiences = [
       "Conformité <strong>IEC 62304</strong> (logiciel médical) et RGPD tout au long de l'évolution de la plateforme.",
     ],
   },
-];
-
-export const education = [
-  { year: "2021 — 2022", name: "Formation Développeur Web", school: "AFPA" },
-  { year: "2018 — 2020", name: "Master en Informatique", school: "Université de Lorraine" },
 ];
