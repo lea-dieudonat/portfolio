@@ -411,6 +411,12 @@ section {
   text-transform: uppercase;
 }
 
+.status-badge-lg {
+  padding: 14px 28px;
+  letter-spacing: 3px;
+  text-decoration: none;
+}
+
 .status-dot {
   width: 7px;
   height: 7px;
@@ -512,6 +518,104 @@ section {
   padding: 5px 12px;
   text-transform: uppercase;
   z-index: 2;
+}
+
+.avatar-tag-btn {
+  border: none;
+  cursor: pointer;
+  transition: opacity .15s, box-shadow .15s;
+}
+
+.avatar-tag-btn:hover {
+  opacity: .85;
+  box-shadow: 0 0 12px rgba(57, 255, 20, .5);
+}
+
+/* ---- WHOAMI TERMINAL ---- */
+.terminal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.terminal-window {
+  width: min(600px, 90vw);
+  background: #0d0d0d;
+  border: 1px solid rgba(57, 255, 20, .3);
+  box-shadow: 0 0 40px rgba(57, 255, 20, .12), 0 0 80px rgba(0, 0, 0, .6);
+  font-family: 'Space Mono', monospace;
+}
+
+.terminal-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #1a1a1a;
+  border-bottom: 1px solid rgba(57, 255, 20, .15);
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: default;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.terminal-dot.red    { background: #ff5f57; cursor: pointer; }
+.terminal-dot.yellow { background: #febc2e; }
+.terminal-dot.green  { background: #28c840; }
+
+.terminal-title {
+  flex: 1;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, .4);
+  text-transform: uppercase;
+}
+
+.terminal-body {
+  padding: 24px 28px;
+  min-height: 280px;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.terminal-line { color: rgba(255, 255, 255, .55); }
+.terminal-line.t-cmd  { color: var(--green); font-weight: 700; }
+.terminal-line.t-warn { color: #f59e0b; }
+.terminal-line.t-info { color: var(--cyan); }
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  background: var(--green);
+  vertical-align: middle;
+  margin-left: 2px;
+  animation: blink .9s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.terminal-footer {
+  padding: 8px 28px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, .2);
+  border-top: 1px solid rgba(57, 255, 20, .1);
+  text-transform: uppercase;
 }
 
 .corner {

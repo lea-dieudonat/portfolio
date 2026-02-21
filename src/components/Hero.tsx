@@ -29,7 +29,7 @@ export default function Hero() {
           <a href="#contact" className="btn btn-ghost">
             Me contacter
           </a>
-          <div className="status-badge">
+          <div className="status-badge status-badge-lg">
             <div className="status-dot" />
             {meta.status}
           </div>

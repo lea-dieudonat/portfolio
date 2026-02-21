@@ -110,7 +110,6 @@ export const experiences = [
     role: "Full-Stack Developer",
     stack: "Symfony · PHP · React.js · PHPUnit · Cypress",
     points: [
-      "<strong>Développeur full-stack dans une squad de 6 devs</strong> au sein d'une équipe produit de 15, sur une plateforme SaaS B2B pour l'industrie du coworking.",
       "<strong>Instauré les process qualité de zéro</strong> : tests automatisés PHPUnit backend + Cypress E2E, principes SOLID/DRY, code reviews systématiques.",
       "Créé toute la documentation technique pour rationaliser l'onboarding et la maintenance.",
       "Facilité les cérémonies Scrum et contribution à la migration d'une architecture monolithique vers une API REST moderne.",

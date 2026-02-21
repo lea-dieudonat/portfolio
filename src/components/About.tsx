@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { about, skillCategories } from "../data/portfolio";
 import { useScrollFade } from "../hooks/useScrollFade";
 import {
@@ -37,8 +38,108 @@ const iconMap: Record<string, React.ReactNode> = {
   SiPostman: <SiPostman size={24} />,
 };
 
+const TERMINAL_LINES = [
+  "$ whoami",
+  "",
+  "  Initializing WHOAMI.exe...",
+  "",
+  "  name         : Léa Dieudonat",
+  "  alias        : HUBBLE",
+  "  role         : Full-Stack Developer",
+  "  location     : Antibes, France",
+  "  caffeine     : dangerously high ☕",
+  "  open_to_work : true",
+  "  bugs_fixed   : classified",
+  "  bugs_created : see above",
+  "",
+  "  [WARN] do not talk before coffee, do not talk before 10am",
+  "  [WARN] dubious humour & office karaoke singer",
+  "  [WARN] will refactor your whole codebase",
+  "",
+  "$ _",
+];
+
+function getLineClass(line: string) {
+  if (line.startsWith("$")) return "t-cmd";
+  if (line.includes("[WARN]")) return "t-warn";
+  if (line.includes("Initializing")) return "t-info";
+  return "";
+}
+
+function WhoamiTerminal({ onClose }: { onClose: () => void }) {
+  const [displayed, setDisplayed] = useState<string[]>([]);
+  const [lineIdx, setLineIdx] = useState(0);
+  const [charIdx, setCharIdx] = useState(0);
+  const done = lineIdx >= TERMINAL_LINES.length;
+
+  useEffect(() => {
+    if (done) return;
+    const line = TERMINAL_LINES[lineIdx];
+
+    if (line === "") {
+      const t = setTimeout(() => {
+        setDisplayed((d) => [...d, ""]);
+        setLineIdx((i) => i + 1);
+        setCharIdx(0);
+      }, 60);
+      return () => clearTimeout(t);
+    }
+
+    if (charIdx < line.length) {
+      const t = setTimeout(() => setCharIdx((c) => c + 1), 18);
+      return () => clearTimeout(t);
+    }
+
+    const pause = line.startsWith("$") ? 250 : 60;
+    const t = setTimeout(() => {
+      setDisplayed((d) => [...d, line]);
+      setLineIdx((i) => i + 1);
+      setCharIdx(0);
+    }, pause);
+    return () => clearTimeout(t);
+  }, [lineIdx, charIdx, done]);
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [onClose]);
+
+  const allLines = done
+    ? displayed
+    : [...displayed, TERMINAL_LINES[lineIdx].slice(0, charIdx)];
+
+  return (
+    <div className="terminal-overlay" onClick={onClose}>
+      <div className="terminal-window" onClick={(e) => e.stopPropagation()}>
+        <div className="terminal-titlebar">
+          <button className="terminal-dot red" onClick={onClose} />
+          <span className="terminal-dot yellow" />
+          <span className="terminal-dot green" />
+          <span className="terminal-title">WHOAMI.exe — bash</span>
+        </div>
+        <div className="terminal-body">
+          {allLines.map((line, i) => (
+            <div key={i} className={`terminal-line ${getLineClass(line)}`}>
+              {line || "\u00A0"}
+              {!done && i === allLines.length - 1 && (
+                <span className="terminal-cursor" />
+              )}
+            </div>
+          ))}
+          {done && <span className="terminal-cursor" />}
+        </div>
+        <div className="terminal-footer">ESC or click outside to close</div>
+      </div>
+    </div>
+  );
+}
+
 export default function About() {
   const ref = useScrollFade<HTMLDivElement>();
+  const [showTerminal, setShowTerminal] = useState(false);
 
   return (
     <section id="about">
@@ -67,7 +168,12 @@ export default function About() {
               ))}
             </div>
           </div>
-          <div className="avatar-tag">WHOAMI.exe</div>
+          <button
+            className="avatar-tag avatar-tag-btn"
+            onClick={() => setShowTerminal(true)}
+          >
+            WHOAMI.exe
+          </button>
         </div>
 
         {/* SKILLS */}
@@ -90,6 +196,10 @@ export default function About() {
           ))}
         </div>
       </div>
+
+      {showTerminal && (
+        <WhoamiTerminal onClose={() => setShowTerminal(false)} />
+      )}
     </section>
   );
 }
