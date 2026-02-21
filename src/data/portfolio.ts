@@ -10,7 +10,7 @@ export const meta = {
 
 export const about = {
   bio: [
-    "J'ai fait mes armes en Backend — PHP, Symfony, Python. En train de conquérir le front - React, Vue, TypeScript.",
+    "J'ai fait mes armes en Backend — PHP, Symfony, Python. En train de conquérir le Frontend - React, Vue, TypeScript.",
     "J'ai des problèmes pour toutes vos solutions, et j'utilise ma flemme pour écrire du code simple.",
     "Sur les pistes ou derrière une pinte quand je ne debug pas.",
   ],

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const links = [
   { label: "About", href: "#about" },
@@ -9,6 +9,31 @@ const links = [
 
 export default function Nav() {
   const [logoClicks, setLogoClicks] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (!isMenuOpen) {
+      return;
+    }
+
+    const handlePointerDown = (event: PointerEvent) => {
+      const navElement = navRef.current;
+      if (!navElement) {
+        return;
+      }
+
+      const target = event.target;
+      if (target instanceof Node && !navElement.contains(target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+    };
+  }, [isMenuOpen]);
 
   const handleLogoClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -21,14 +46,27 @@ export default function Nav() {
   };
 
   return (
-    <nav>
+    <nav ref={navRef}>
       <a href="#hero" className="nav-logo" onClick={handleLogoClick}>
         HU<em>BB</em>LE
       </a>
-      <ul className="nav-links">
+      <button
+        type="button"
+        className={`nav-burger ${isMenuOpen ? "open" : ""}`}
+        aria-label="Toggle navigation menu"
+        aria-expanded={isMenuOpen}
+        onClick={() => setIsMenuOpen((open) => !open)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+      <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
         {links.map((l) => (
           <li key={l.label}>
-            <a href={l.href}>{l.label}</a>
+            <a href={l.href} onClick={() => setIsMenuOpen(false)}>
+              {l.label}
+            </a>
           </li>
         ))}
       </ul>

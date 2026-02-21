@@ -12,6 +12,7 @@
   --white: #EEEEF0;
   --gray: rgba(238, 238, 240, 0.45);
   --grid: rgba(123, 47, 190, 0.12);
+  --layout-gutter: 60px;
 }
 
 * {
@@ -96,7 +97,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 60px;
+  padding: 18px var(--layout-gutter);
   border-bottom: 1px solid rgba(123, 47, 190, 0.25);
   background: rgba(6, 6, 8, 0.88);
   backdrop-filter: blur(14px);
@@ -135,6 +136,10 @@ nav {
   color: var(--green);
 }
 
+.nav-burger {
+  display: none;
+}
+
 /* ---- SECTIONS ---- */
 section {
   position: relative;
@@ -146,7 +151,7 @@ section {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 120px 60px 80px;
+  padding: 120px var(--layout-gutter) 80px;
   overflow: hidden;
 }
 
@@ -418,7 +423,7 @@ section {
 
 /* ---- ABOUT ---- */
 #about {
-  padding: 120px 60px;
+  padding: 120px var(--layout-gutter);
 }
 
 .about-grid {
@@ -462,7 +467,7 @@ section {
 .avatar-tag {
   position: absolute;
   bottom: 16px;
-  left: -1px;
+  left: var(--bio-pad-x, 28px);
   font-family: 'Space Mono', monospace;
   font-size: 9px;
   letter-spacing: 3px;
@@ -580,7 +585,7 @@ section {
 
 /* ---- SKILLS ---- */
 #skills {
-  padding: 120px 60px;
+  padding: 120px var(--layout-gutter);
   background: rgba(123, 47, 190, 0.03);
 }
 
@@ -658,7 +663,7 @@ section {
 
 /* ---- PROJECTS ---- */
 #projects {
-  padding: 120px 60px;
+  padding: 120px var(--layout-gutter);
 }
 
 .projects-grid {
@@ -781,7 +786,7 @@ section {
 
 /* ---- EXPERIENCE ---- */
 #experience {
-  padding: 120px 60px;
+  padding: 120px var(--layout-gutter);
   background: rgba(123, 47, 190, 0.03);
 }
 
@@ -864,7 +869,7 @@ section {
 
 /* ---- EDUCATION ---- */
 #education {
-  padding: 80px 60px 120px;
+  padding: 80px var(--layout-gutter) 120px;
 }
 
 .edu-grid {
@@ -907,7 +912,7 @@ section {
 
 /* ---- CONTACT ---- */
 #contact {
-  padding: 120px 60px 80px;
+  padding: 120px var(--layout-gutter) 80px;
 }
 
 .contact-inner {
@@ -1094,23 +1099,85 @@ footer .made-with {
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 900px) {
-  nav {
-    padding: 16px 28px;
+  :root {
+    --layout-gutter: 28px;
   }
 
-  .nav-links {
-    gap: 20px;
+  .section-title {
+    margin-bottom: 40px;
   }
 
-  #hero,
   #about,
   #skills,
   #projects,
-  #experience,
-  #education,
+  #experience {
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+
+  #education {
+    padding-top: 64px;
+    padding-bottom: 88px;
+  }
+
   #contact {
-    padding-left: 28px;
-    padding-right: 28px;
+    padding-top: 88px;
+    padding-bottom: 56px;
+  }
+
+  nav {
+    position: fixed;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: var(--layout-gutter);
+    right: var(--layout-gutter);
+    display: none;
+    flex-direction: column;
+    gap: 14px;
+    padding: 14px;
+    border: 1px solid rgba(123, 47, 190, 0.25);
+    background: rgba(6, 6, 8, 0.96);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-burger {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(123, 47, 190, 0.4);
+    background: transparent;
+    color: var(--white);
+    padding: 8px;
+  }
+
+  .nav-burger span {
+    width: 100%;
+    height: 1px;
+    background: var(--white);
+    transition: transform .2s, opacity .2s;
+  }
+
+  .nav-burger.open span:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+  }
+
+  .nav-burger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-burger.open span:nth-child(3) {
+    transform: translateY(-5px) rotate(-45deg);
   }
 
   .about-grid,
@@ -1120,6 +1187,14 @@ footer .made-with {
     grid-template-columns: 1fr;
   }
 
+  .about-skills {
+    grid-template-columns: 1fr;
+  }
+
+  .about-skills .skill-group.wide {
+    grid-column: auto;
+  }
+
   .timeline-item {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -1127,6 +1202,10 @@ footer .made-with {
 
   .hero-kanji {
     display: none;
+  }
+
+  .bio-frame {
+    --bio-pad-x: 22px;
   }
 
   footer {
@@ -1226,7 +1305,7 @@ footer .made-with {
 
 .bio-frame {
   position: relative;
-  border: 1px solid rgba(123, 47, 190, .4);
+  --bio-pad-x: 28px;
   padding: 3px;
 }
 
@@ -1239,7 +1318,7 @@ footer .made-with {
 }
 
 .bio-content {
-  padding: 28px 28px 48px;
+  padding: 28px var(--bio-pad-x) 48px;
 }
 
 .bio-content p {
@@ -1262,4 +1341,18 @@ footer .made-with {
 
 .about-skills .skill-group.wide {
   grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-skills {
+    grid-template-columns: 1fr;
+  }
+
+  .about-skills .skill-group.wide {
+    grid-column: auto;
+  }
 }

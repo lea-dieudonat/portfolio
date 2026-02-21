@@ -12,7 +12,7 @@ export default function Contact() {
 
   return (
     <section id="contact">
-      <div className="section-label">06 — Contact</div>
+      <div className="section-label">04 — Contact</div>
       <div className="contact-inner fade" ref={ref}>
         <div className="contact-left">
           <div className="big-text">
