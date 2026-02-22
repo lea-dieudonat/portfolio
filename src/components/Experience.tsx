@@ -4,7 +4,7 @@ import { useScrollFade } from "../hooks/useScrollFade";
 export default function Experience() {
   return (
     <section id="experience">
-      <div className="section-label">02 — Expériences</div>
+      <div className="section-label">02 — Experience</div>
       <h2 className="section-title">
         MY
         <br />

@@ -143,7 +143,7 @@ export default function About() {
 
   return (
     <section id="about">
-      <div className="section-label">01 — À propos & Stack</div>
+      <div className="section-label">01 — About & Stack</div>
       <h2 className="section-title">
         WHO
         <br />

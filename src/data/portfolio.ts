@@ -10,14 +10,14 @@ export const meta = {
 
 export const about = {
   bio: [
-    "J'ai fait mes armes en Backend — PHP, Symfony, Python. En train de conquérir le Frontend - React, Vue, TypeScript.",
-    "J'ai des problèmes pour toutes vos solutions, et j'utilise ma flemme pour écrire du code simple.",
-    "Sur les pistes ou derrière une pinte quand je ne debug pas.",
+    "I honed my skills in Backend — PHP, Symfony, Python. Currently conquering the Frontend - React, Vue, TypeScript.",
+    "I have solutions for all your problems, and I use my laziness to write simple code.",
+    "On the slopes or behind a pint when I'm not debugging.",
   ],
   languages: [
-    { flag: "🇫🇷", label: "Français", level: "Natif" },
+    { flag: "🇫🇷", label: "French", level: "Native" },
     { flag: "🇬🇧", label: "English", level: "C1" },
-    { flag: "🇩🇪", label: "Deutsch", level: "B1" },
+    { flag: "🇩🇪", label: "German", level: "B1" },
   ],
 };
 
@@ -64,7 +64,7 @@ export const projects = [
   {
     num: "01",
     title: "WinterShop",
-    desc: "Plateforme e-commerce full-stack pour équipements de sports d'hiver. Gestion de catalogue, panier persistant côté serveur, checkout Stripe, authentification JWT, i18n FR/EN, interface admin EasyAdmin, tests fonctionnels PHPUnit.",
+    desc: "Full-stack e-commerce platform for winter sports equipment. Catalog management, server-side persistent cart, Stripe checkout, JWT authentication, i18n FR/EN, EasyAdmin admin interface, PHPUnit functional tests.",
     links: [
       { label: "Frontend →", url: "https://github.com/lea-dieudonat/wintershop-front" },
       { label: "Backend →", url: "https://github.com/lea-dieudonat/wintershop-back" },
@@ -85,7 +85,7 @@ export const projects = [
   {
     num: "02",
     title: "Snow Companion",
-    desc: "Plateforme de tracking et planification pour riders (ski / snowboard). Création et suivi de sessions, statistiques de progression, recherche de stations. Stack JS full-stack moderne.",
+    desc: "Full-stack web app to track ski sessions and equipment maintenance. Real-time weather data, JWT authentication, responsive design, admin dashboard, Dockerized deployment.",
     links: [
       { label: "Frontend →", url: "https://github.com/lea-dieudonat/snow-companion-front" },
       { label: "Backend →", url: "https://github.com/lea-dieudonat/snow-companion-backend" },
@@ -110,9 +110,9 @@ export const experiences = [
     role: "Full-Stack Developer",
     stack: "Symfony · PHP · React.js · PHPUnit · Cypress",
     points: [
-      "<strong>Instauré les process qualité de zéro</strong> : tests automatisés PHPUnit backend + Cypress E2E, principes SOLID/DRY, code reviews systématiques.",
-      "Créé toute la documentation technique pour rationaliser l'onboarding et la maintenance.",
-      "Facilité les cérémonies Scrum et contribution à la migration d'une architecture monolithique vers une API REST moderne.",
+      "<strong>Established quality processes from scratch</strong>: automated PHPUnit backend tests + Cypress E2E, SOLID/DRY principles, systematic code reviews.",
+      "Created all technical documentation to streamline onboarding and maintenance.",
+      "Facilitated Scrum ceremonies and contributed to the migration from a monolithic architecture to a modern REST API.",
     ],
   },
   {
@@ -121,11 +121,11 @@ export const experiences = [
     role: "Full-Stack Developer",
     stack: "Symfony · PHP · Python · JavaScript · MySQL",
     points: [
-      "<strong>Construit de zéro</strong> un dashboard SaaS B2B pour la gestion et le monitoring de dispositifs de physiothérapie déployés en cabinets médicaux.",
-      "Equipe R&D de 5 : définition des user stories, spécifications techniques, décisions produit.",
-      "<strong>Architecturé des connexions socket temps réel</strong> pour le monitoring sur des réseaux instables ou internationaux (Corée du Sud, USA).",
-      "Stabilisation du serveur socket de crashs aléatoires à <strong>99.999% de disponibilité</strong> — debugging de fuites mémoire, race conditions, monitoring.",
-      "Conformité <strong>IEC 62304</strong> (logiciel médical) et RGPD tout au long de l'évolution de la plateforme.",
+      "<strong>Built from scratch</strong> a B2B SaaS dashboard for managing and monitoring physiotherapy devices deployed in medical offices.",
+      "R&D team of 5: defined user stories, technical specifications, product decisions.",
+      "<strong>Architected real-time socket connections</strong> for monitoring on unstable or international networks (South Korea, USA).",
+      "Stabilized the socket server from random crashes to <strong>99.999% uptime</strong> — debugging memory leaks, race conditions, monitoring.",
+      "Ensured <strong>IEC 62304</strong> (medical software) and GDPR compliance throughout the platform's evolution.",
     ],
   },
 ];

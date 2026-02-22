@@ -24,10 +24,10 @@ export default function Hero() {
         </p>
         <div className="hero-cta">
           <a href="#projects" className="btn btn-green">
-            Voir mes projets
+            See my projects
           </a>
           <a href="#contact" className="btn btn-ghost">
-            Me contacter
+            Contact me
           </a>
           <div className="status-badge status-badge-lg">
             <div className="status-dot" />

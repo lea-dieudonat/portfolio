@@ -4,7 +4,7 @@ import { useScrollFade } from "../hooks/useScrollFade";
 export default function Projects() {
   return (
     <section id="projects">
-      <div className="section-label">03 — Projets</div>
+      <div className="section-label">03 — Projects</div>
       <h2 className="section-title">
         MY
         <br />
