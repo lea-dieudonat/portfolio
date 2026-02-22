@@ -110,9 +110,11 @@ export const experiences = [
     role: "Full-Stack Developer",
     stack: "Symfony · PHP · React.js · PHPUnit · Cypress",
     points: [
-      "<strong>Established quality processes from scratch</strong>: automated PHPUnit backend tests + Cypress E2E, SOLID/DRY principles, systematic code reviews.",
-      "Created all technical documentation to streamline onboarding and maintenance.",
-      "Facilitated Scrum ceremonies and contributed to the migration from a monolithic architecture to a modern REST API.",
+      "Architected and delivered multi-tenant <strong>white-label</strong> capabilities, decoupling the platform from its initial single-client configuration to support onboarding of new B2B clients.",
+      "Led the <strong>internationalization</strong> of the platform: translation system, locale-aware metrics, and multi-currency support.",
+      "Built <strong>financial reporting dashboards</strong> (revenue vs. forecast, KPIs) using ApexCharts, backed by complex SQL aggregations (SUM, GROUP BY, averages, period filters, contract/room-type segmentation) exposed via clean REST API endpoints.",
+      "Developed full-stack <strong>room booking features</strong>: server-side availability logic, conflict resolution, scheduling constraints, and React UI.",
+      "Improved code quality and reduced bugs by introducing automated testing (Cypress E2E + PHPUnit), enforcing SOLID/DRY principles, and implementing systematic code reviews.",
     ],
   },
   {
