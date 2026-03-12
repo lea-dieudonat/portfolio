@@ -29,10 +29,15 @@ export default function Hero() {
           <a href="#contact" className="btn btn-ghost">
             Contact me
           </a>
-          <div className="status-badge status-badge-lg">
+          <a
+            href={meta.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="status-badge status-badge-lg"
+          >
             <div className="status-dot" />
             {meta.status}
-          </div>
+          </a>
         </div>
       </div>
     </section>

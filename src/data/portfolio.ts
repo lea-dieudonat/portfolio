@@ -4,7 +4,7 @@ export const meta = {
   location: "Antibes, France",
   email: "leadieudonat@gmail.com",
   github: "https://github.com/lea-dieudonat",
-  linkedin: "https://linkedin.com/in/leadieudonat",
+  linkedin: "https://www.linkedin.com/in/lea-dieudonat",
   status: "Open to work",
 };
 
